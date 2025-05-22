@@ -1,0 +1,660 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
+
+/* CLASSE GENERALE */
+.bouton_beige {
+    background-color: #f5b19e;
+    border-radius: 50px;
+    font-size: 1.2rem;
+    padding: 1rem;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+}
+
+.bouton_beige:hover {
+    background-color: #f39074;
+}
+
+/* MODIF DU BODY */
+body {
+    background: url(../media/bg.png);
+    font-family: "Lato", sans-serif;
+    padding: 0;
+    margin: 0;
+    color: black;
+}
+
+h1 {
+    font-family: "Libre Baskerville", serif;
+}
+
+h2 {
+    font-family: "Lato", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+h3 {
+    font-family: "Lato", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+section {
+    min-height: 100vh;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* MODIF DU HEADER */
+header {
+    background-color: #f9e6e086;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* POUR QUE LA BARRE NE BOUGE PLUs */
+    position: sticky;
+    top: 0;
+    z-index: 14;
+    /* Passe devant l'image */
+}
+
+/* METTRE LA MARGE DE CHAQUES CÔTES */
+header,
+footer {
+    padding: 0 10%;
+}
+
+/* MODIFICATION DE L'IMAGE */
+header img {
+    width: 100px;
+    height: auto;
+}
+
+header nav a {
+    color: black;
+    text-decoration: none;
+    font-size: 1.1rem;
+    padding: 0.4rem;
+}
+
+header nav a:hover {
+    color: white;
+    transition: 0.25s;
+}
+
+
+
+
+
+
+
+/* PAGE D'ACCUEIL */
+#section_top {
+    background: url(../media/bg2.jpg);
+    background-size: cover;
+    /* adapte l'image a la taille de la page */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
+
+#section_top h1 {
+    color: white;
+    text-transform: capitalize;
+    font-size: 3.5rem;
+}
+
+#section_top h2 {
+    color: white;
+    text-transform: capitalize;
+}
+
+
+
+
+
+
+/*PAGE PRESENTATION */
+
+/* Modif des titres */
+#section_about h2 {
+    font-size: 3rem;
+    color: black;
+    text-align: left;
+}
+
+#section_about h3 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #f39074;
+
+}
+
+/* lodif de la section */
+#section_about {
+    color: #000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin: 0 25vw 0 25vw;
+}
+
+/* plus d'écart entre les lignes du paragraphe */
+#section_about p {
+    line-height: 1.7rem;
+}
+
+/* modif de l'image, son opacité et mettre le texte par dessus sans affécté l'opacité */
+#section_about img {
+    width: 100%;
+    max-width: 100vw;
+    height: auto;
+    max-height: 100vh;
+}
+
+.img1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.img1 img {
+    position: absolute;
+    opacity: 0.3;
+    /* Ton niveau de transparence */
+    z-index: 1;
+    /* en arrière-plan */
+}
+
+.txt_img {
+    position: relative;
+    z-index: 2;
+    /* Passe devant l'image */
+    color: black;
+    font-size: 1.2rem;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    text-align: start;
+}
+
+
+
+
+
+
+
+
+
+
+/* PAGE NOS SERVICES */
+
+/* Pour aligner les cartes */
+.flex {
+    display: flex;
+    justify-content: center;
+}
+
+.flex_services {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#section_services h2 {
+    font-family: "Lato", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 2rem;
+    margin-top: 100px;
+}
+
+#section_services h3 {
+    font-family: "Lato", sans-serif;
+    font-weight: bolder;
+    font-size: 1.5rem;
+    color: #f39074;
+}
+
+#section_services ul {
+    font-weight: 600;
+}
+
+/* Le conteneur de la carte */
+.card_container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    /* auto-fill permet de creer autant délément que possible sur une ligne min350px max1fr */
+    gap: 30px;
+    margin: 80px 80px;
+}
+
+/* Pour animer l'element */
+.card_wrapper {
+    position: relative;
+    height: 500px;
+    width: 100%;
+    perspective: 2000px;
+    /* Utilise la perspective sur les enfants 2000px entre les enfants de l'élement et l'ecran */
+    perspective-origin: top;
+}
+
+/* Faire tourner la carte sur 180deg */
+.card_wrapper:hover .card {
+    transform: rotateY(180deg);
+}
+
+.card {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    height: 100%;
+    transform-style: preserve-3d;
+    /* permet de garder l'univers 3d créer aec le parent */
+    transition: transform 0.8s cubic-bezier(0.86, 0, 0.07, 1);
+}
+
+/* Modif sur L'avant et l'arriere */
+.card_front,
+.card_back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    padding: 30px;
+    box-sizing: border-box;
+    backface-visibility: hidden;
+    /* pour cacher la partie arriere de la carte  */
+    -webkit-backface-visibility: hidden;
+}
+
+/* Modif de la partie avant de la carte */
+.card_front {
+    background-color: #fff;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    border-radius: 18px;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+    cursor: pointer;
+}
+
+.card_front img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 10;
+}
+
+/* Modif de la partie arriere de la carte */
+.card_back {
+    background-color: white;
+    transform: rotateY(180deg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: start;
+    justify-content: space-evenly;
+    border-radius: 18px;
+    border: 4px solid black;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+/* PAGE REALISATIONS */
+
+/* Pour aligner le bouton */
+#section_real {
+    text-align: center;
+    margin-top: 250px;
+    /* augmente l'espace en haut de page*/
+    padding-top: 100px;
+
+}
+
+#section_real .bouton_beige {
+    margin-top: 30px;
+    /* augmente l'espace au-dessus du bouton */
+    display: inline-block;
+}
+
+/* Pour mettre Le diapo et txt côte à côte */
+.real_content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    /* Permet l’adaptation en responsive */
+    margin: 40px 0;
+    padding: 0 5vw;
+}
+
+.slider_container,
+.flex_real {
+    flex: 1;
+    max-width: 600px;
+    box-sizing: border-box;
+    padding: 0 20px;
+}
+
+/* Titres */
+#section_real h2 {
+    font-size: 2rem;
+    color: black;
+    text-align: center;
+}
+
+#section_real h3 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #f39074;
+    text-align: center;
+}
+
+#section_real p {
+    font-family: "Lato", sans-serif;
+    line-height: 1.7rem;
+    font-size: 1.1rem;
+    color: black;
+    text-align: center;
+}
+
+/* Création du diaporama d'image */
+.slider_container {
+    max-width: 800px;
+    position: relative;
+    /* positionner les éléments enfants en absolu (les images ou les boutons) */
+    margin: auto;
+    height: 500px;
+    overflow: hidden;
+    /* Pour que l'image ne dépasse pas du conteneur */
+    border: 4px solid white;
+    padding-bottom: 40px;
+}
+
+.menu {
+    position: absolute;
+    /* Positionne la barre des boutons par rapport à son parent positionné */
+    bottom: 15px;
+    /* Décalage de 15px depuis le bas */
+    z-index: 20;
+    /* S'affiche au-dessus des autres éléments (plus la valeur est grande, plus l'élément est "au-dessus") */
+    width: 100%;
+    bottom: 0;
+    /* Remplace la ligne précédente : colle la barre tout en bas */
+    text-align: center;
+}
+
+.menu label {
+    cursor: pointer;
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background: #ccc;
+    border-radius: 50px;
+    margin: 0 0.2em 1em;
+}
+
+.menu label:hover,
+.menu label:focus {
+    background: #f39074;
+}
+
+.slide-input {
+    opacity: 0;
+}
+
+.slide-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    /* Permet de superposer les images */
+    top: 0;
+    left: 100%;
+    z-index: 10;
+    /* Derrière l’image visible */
+    transition: left 0s 0.75s;
+    /* Décale l’image à gauche avec un délai (à la sortie) */
+}
+
+/* Quand un bouton radio est sélectionné */
+[id^="slide"]:checked+.slide-img {
+    left: 0;
+    /* Ramène l’image à l’écran */
+    z-index: 12;
+    transition: left 0.65s ease-out;
+    /* Animation fluide pour faire glisser l’image */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* PAGE NOUS LOCALISER */
+#section_loc {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+}
+
+/* Titres */
+#section_loc h2 {
+    font-size: 2rem;
+    color: black;
+    text-align: center;
+}
+
+#section_loc h3 {
+    color: #f39074;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+/*changer la taille de la map pour l'etirer au max  */
+#section_loc iframe {
+    width: 95vw;
+    height: 450px;
+    object-fit: cover;
+}
+
+
+
+
+
+
+
+/* PAGE NOUS CONTACTER */
+#section_contact {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    margin-top: 120px;
+    /* augmente l'espace en haut de page*/
+    padding-top: 40px;
+}
+
+/* Titres */
+#section_contact h2 {
+    font-size: 2rem;
+    color: black;
+    text-align: center;
+}
+
+#section_contact h3 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #f39074;
+}
+
+/* Position du formulaire */
+
+#section_contact form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+/* Modif des zones du formulaire */
+
+#section_contact form input[type="text"],
+#section_contact form input[type="tel"],
+#section_contact form input[type="email"],
+#section_contact form select,
+#section_contact form textarea {
+    max-width: 600px;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: .5rem;
+    border: 1.5px solid #f5b19e;
+    border-radius: 25px;
+    font-size: 1rem;
+    font-family: "Lato", sans-serif;
+}
+
+#section_contact form select {
+    width: 100%;
+    max-width: 625px;
+}
+
+#section_contact form label {
+    font-size: 1.1rem;
+    font-weight: 600;
+    padding: 5px;
+    font-family: "Lato", sans-serif;
+    text-align: left;
+}
+
+/* Zone de texte */
+#section_contact form textarea {
+    height: 150px;
+}
+
+
+#section_contact form p {
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+    color: black;
+    font-style: italic;
+}
+
+/* Bouton envoyer */
+#section_contact .bouton_beige {
+    cursor: pointer;
+    margin-top: 1.5rem;
+    align-self: center;
+}
+
+/* Alignement checkbox + texte */
+.modif_checkbox {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+}
+
+.modif_checkbox input[type="checkbox"] {
+    margin-top: 5px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.modif_checkbox label {
+    font-size: 0.9rem;
+    color: black;
+    cursor: pointer;
+    font-style: italic;
+}
+
+select option {
+    background: #f9e6e0;
+    color: black;
+}
+
+input:hover,
+select:hover {
+    background-color: #f5b19e;
+    transition: 0.25s;
+    color: black;
+}
+
+
+
+
+
+
+
+
+/* MODIF FOOTER */
+
+footer {
+    background-color: #f9e6e086;
+    min-height: 10vh;
+    /* hauteur de 20vh en bas de la page */
+    color: black;
+    gap: 0.5rem;
+}
+
+footer img {
+    width: 100px;
+    height: auto;
+}
+
+footer p {
+    line-height: 0;
+   font-size: small;
+}
+
+.flex_footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: start;
+    justify-content: center;
+}
