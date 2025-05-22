@@ -65,7 +65,7 @@ header {
     /* POUR QUE LA BARRE NE BOUGE PLUs */
     position: sticky;
     top: 0;
-    z-index: 14;
+    z-index: 8;
     /* Passe devant l'image */
 }
 
@@ -270,6 +270,9 @@ header nav a:hover {
     transform-style: preserve-3d;
     /* permet de garder l'univers 3d créer aec le parent */
     transition: transform 0.8s cubic-bezier(0.86, 0, 0.07, 1);
+    /* cubic-bezier est une courbe qui définit la façon dont la vitesse de la transition évolue dans le temps. */
+    -webkit-transform-style: preserve-3d;
+  -webkit-transition: transform 0.8s cubic-bezier(0.86, 0, 0.07, 1);
 }
 
 /* Modif sur L'avant et l'arriere */
@@ -407,7 +410,7 @@ header nav a:hover {
     /* Positionne la barre des boutons par rapport à son parent positionné */
     bottom: 15px;
     /* Décalage de 15px depuis le bas */
-    z-index: 20;
+    z-index: 7;
     /* S'affiche au-dessus des autres éléments (plus la valeur est grande, plus l'élément est "au-dessus") */
     width: 100%;
     bottom: 0;
@@ -442,17 +445,18 @@ header nav a:hover {
     /* Permet de superposer les images */
     top: 0;
     left: 100%;
-    z-index: 10;
+    z-index: 5;
     /* Derrière l’image visible */
     transition: left 0s 0.75s;
     /* Décale l’image à gauche avec un délai (à la sortie) */
 }
 
 /* Quand un bouton radio est sélectionné */
+/* [id^="slide"] sélectionne les éléments HTML dont l’attribut id commence par slide. */
 [id^="slide"]:checked+.slide-img {
     left: 0;
     /* Ramène l’image à l’écran */
-    z-index: 12;
+    z-index: 6;
     transition: left 0.65s ease-out;
     /* Animation fluide pour faire glisser l’image */
 }
@@ -718,7 +722,7 @@ footer p {
         padding: 10px;
     }
 
-    /* Services */
+    /* Services (cartes)*/
     .flex,
     .flex_services {
         flex-direction: column;
@@ -735,7 +739,7 @@ footer p {
         height: auto;
     }
 
-    /* Réalisations */
+    /* Réalisations (diapo)*/
     .real_content {
         flex-direction: column;
     }
