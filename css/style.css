@@ -723,9 +723,6 @@ footer p {
         text-align: center;
     }
 
-
-    
-
     /* Logo */
     header img {
         width: 150px;
@@ -779,7 +776,7 @@ footer p {
 
     .card img {
         width: 100%;
-        height: auto;
+        height: 100%;
     }
 
     /* Réalisations (diapo)*/
@@ -834,6 +831,7 @@ footer p {
         width: 120px;
         margin-bottom: 10px;
     }
+
     /* Burgermenu */
 
      .burger {
