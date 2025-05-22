@@ -634,7 +634,40 @@ select:hover {
 }
 
 
+/* BURGER MENU */
+.burger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+    z-index: 10;
+}
 
+.burger span {
+    width: 25px;
+    height: 3px;
+    background-color: black;
+    border-radius: 2px;
+    transition: 0.3s;
+}
+
+/* Animation du burger (croix) */
+.burger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.burger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.burger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* NAVIGATION ACTIVE */
+#nav {
+    transition: right 0.3s ease-in-out;
+}
 
 
 
@@ -657,7 +690,7 @@ footer img {
 
 footer p {
     line-height: 0;
-   font-size: small;
+    font-size: small;
 }
 
 .flex_footer {
@@ -671,8 +704,9 @@ footer p {
 
 @media only screen and (max-width: 700px) {
     * {
-    box-sizing: border-box;
-}
+        box-sizing: border-box;
+    }
+
     /* Structure générale */
     body {
         margin: 0;
@@ -689,15 +723,8 @@ footer p {
         text-align: center;
     }
 
-    header{
-        top: auto;
-    }
 
-    nav a {
-        display: block;
-        margin: 10px 0;
-        font-size: 1.2em;
-    }
+    
 
     /* Logo */
     header img {
@@ -726,11 +753,12 @@ footer p {
     }
 
     .txt_img {
-    position: static;
-    z-index: auto;
-    background-color: rgba(255,255,255,0.8); /* pour lisibilité */
-    padding: 1rem;
-    border-radius: 10px;
+        position: static;
+        z-index: auto;
+        background-color: rgba(255, 255, 255, 0.8);
+        /* pour lisibilité */
+        padding: 1rem;
+        border-radius: 10px;
     }
 
     /* Services (cartes)*/
@@ -741,7 +769,7 @@ footer p {
     }
 
     .card_container {
-        
+
         margin-bottom: 20px;
         width: 100%;
         grid-template-columns: 1fr;
@@ -806,4 +834,36 @@ footer p {
         width: 120px;
         margin-bottom: 10px;
     }
+    /* Burgermenu */
+
+     .burger {
+        display: flex;
+        position: absolute;
+        top: 1rem;
+        right: 1.5rem;
+    }
+
+    #nav {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 70%;
+        height: 100vh;
+        background-color: #f9e6e0;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 2rem;
+        gap: 2rem;
+    }
+
+    #nav.active {
+        right: 0;
+    }
+
+    #nav a {
+        font-size: 1.5rem;
+    }
 }
+
+

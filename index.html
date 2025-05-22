@@ -21,6 +21,13 @@
         <a href="#section_top" title="Lien page accueil">
             <strong><img src="media/logo.png" title="Logo AnnaStudio" alt="Logo AnnaStudio"></strong>
         </a>
+
+        <!-- Icône burger -->
+        <div class="burger" id="burger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
         <!-- DEBUT DE LA BARRE DE NAVIGATION  -->
         <nav id="nav">
             <!-- BOUTONS DE LA BARRE DE NAVIGATION -->
@@ -346,34 +353,43 @@
     </main>
     <!-- Début du footer -->
     <footer>
-        
+
         <div class="flex_footer">
-             <a href="#section_top" title="Lien page accueil">
-            <strong><img src="media/logo.png" title="Logo AnnaStudio" alt="Logo AnnaStudio"></strong>
-        </a>
+            <a href="#section_top" title="Lien page accueil">
+                <strong><img src="media/logo.png" title="Logo AnnaStudio" alt="Logo AnnaStudio"></strong>
+            </a>
             <p>© Copyright AnnaStudio.</p>
             <p>ANNA PHOTOGRAPHIE - ZAC DU 14 Juillet, 62223</p>
             <p>Saint-Laurent-Blangy.</p>
             <p>03 21 00 00 00 </p>
             <p>contact@anna-photographie.com</p>
         </div>
-       
+
     </footer>
     <!-- Fin du footer -->
-<!-- Ajout pour mobile (cartes) -->
+    <!-- Ajout pour mobile (cartes) -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const cards = document.querySelectorAll(".card_wrapper");
+
+            cards.forEach(cardWrapper => {
+                cardWrapper.addEventListener("click", function () {
+                    const card = this.querySelector(".card");
+                    card.classList.toggle("flipped");
+                });
+            });
+        });
+    </script>
+<!-- Burger menu -->
  <script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const cards = document.querySelectorAll(".card_wrapper");
+    const burger = document.getElementById('burger');
+    const nav = document.getElementById('nav');
 
-    cards.forEach(cardWrapper => {
-      cardWrapper.addEventListener("click", function () {
-        const card = this.querySelector(".card");
-        card.classList.toggle("flipped");
-      });
+    burger.addEventListener('click', () => {
+        burger.classList.toggle('active');
+        nav.classList.toggle('active');
     });
-  });
 </script>
-
 </body>
 
 </html>
