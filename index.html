@@ -22,7 +22,7 @@
             <strong><img src="media/logo.png" title="Logo AnnaStudio" alt="Logo AnnaStudio"></strong>
         </a>
         <!-- DEBUT DE LA BARRE DE NAVIGATION  -->
-        <nav>
+        <nav id="nav">
             <!-- BOUTONS DE LA BARRE DE NAVIGATION -->
             <a href="#section_top" title="Lien vers la page d'accueil"><i class="fa-solid fa-camera"></i></i></a>
             <a href="#section_about" title="Lien vers la page de présentation">Présentation</a>
@@ -360,6 +360,19 @@
        
     </footer>
     <!-- Fin du footer -->
+<!-- Ajout pour mobile (cartes) -->
+ <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const cards = document.querySelectorAll(".card_wrapper");
+
+    cards.forEach(cardWrapper => {
+      cardWrapper.addEventListener("click", function () {
+        const card = this.querySelector(".card");
+        card.classList.toggle("flipped");
+      });
+    });
+  });
+</script>
 
 </body>
 
